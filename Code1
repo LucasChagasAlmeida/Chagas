@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main(void) {
+  int pão=1,café=2,leite=3,chá=4,total=0;
+  int c=1;
+  int x;
+  printf("digite o teu dinheiro: ");
+  do
+  {
+    if(x<0)
+    {
+      printf("valor inválido, digite novamente: ");
+    }
+    scanf("%i",&x);
+  }while(x<0);
+  printf("para comprar um saco de pão digite 1\npara comprar um café digite 2\npara comprar uma caixa de leite digite 3\npara ver sua conta e finalizar a operação digite 0\n");
+  while(c!=0){
+    scanf("%i", &c);
+    getchar();
+    switch (c){
+      case 1:
+        total+=pão;
+        break;
+      case 2:
+        total+=café;
+        break;
+      case 3:
+        total+=leite;
+        break;
+      case 4:
+        total+=chá;
+        break;
+      case 0:
+        break;
+      default:
+        printf("digito inválido \n");
+        break;
+    }
+  }  
+  printf("sua conta deu %i reais", total);
+  if(x<total)
+  {
+    printf(" porém você não tem dinheiro o suficiente para fazer esta compra!!");
+  }
+  return 0;
+}
